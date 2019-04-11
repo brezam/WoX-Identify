@@ -2,7 +2,7 @@
 
 ## I made this because I was annoyed
 
-#### I'm not a programmer so... yeah (it works though).
+#### I'm not a _real_ programmer so... yeah (it works though).
 
 Don't expect anything out of it. Information contained within is 13% reliable, unless it is a full moon, then it is 24% reliable.
 
