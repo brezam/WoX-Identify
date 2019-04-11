@@ -8,9 +8,13 @@ Don't expect anything out of it. Information contained within is 13% reliable, u
 
 ----
 
-Are you tired of not knowing if **Flaming** is better than **Burning**? Are you tired of thinking "what the heck does Sonic mean?". Well, say no more.
+Are you tired of not knowing if **Flaming** is better than **Burning**? Are you tired of thinking "what the heck does Sonic mean?", and then afterwards realizing it has to do with electricity and not wind (because why not). 
 
-Run `world_of_xeen_equipmentcompare.py`and be ~even more pissed off~ mildy happy. It still won't help you fight the Mega Dragon:dragon_face:. Good luck.
+**Say no more.**
 
+Run `world_of_xeen_equipmentcompare.py`and be ~even more pissed off~ mildy happy. It still won't help you fight the Mega Dragon:dragon_face: so good luck.
+
+TO DO List:
 - [X] Use tkinter like a moron.
-- [ ] Check if it's accurate (1% done)
+- [X] Use already available information because of lazyness ♥[Gamefaq's](https://bit.ly/2Iajrox)
+- [ ] Check if the GUI displays accurate results. (0.13% done)
