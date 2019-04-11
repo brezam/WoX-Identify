@@ -1,0 +1,55 @@
+                 Resistance   Damage  Value Levels
+
+FIRE
+
+Burning                 +5       +2    200  2
+Fiery                   +7       +3    300  2-3
+Pyric                   +9       +4    400  2-4
+Fuming                 +12       +5    500  3-5
+Flaming                +15      +10   1000  3-6
+Seething               +20      +15   1500  4-6
+Blazing                +25      +20   2000  5-6
+Scorching              +30      +30   3000  6-7
+
+FROST
+
+Icy                     +5       +2    200  2-3
+Frost                  +10       +4    400  2-4
+Freezing               +15       +5    500  3-5
+Cold                   +20      +10   1000  4-6
+Cryo                   +25      +20   2000  5-7
+
+ELECTRICAL
+
+Flickering              +5       +2    200  2
+Sparking                +7       +3    300  2-3
+Static                  +9       +4    400  2-4
+Flashing               +12       +5    500  3-5
+Shocking               +15      +10   1000  3-5
+Electric               +20      +15   1500  4-6
+Dyna                   +25      +20   2000  5-7
+
+POISON
+
+Acidic                 +10       +2    200  2-3
+Venemous               +15       +4    400  2-4
+Poisonous              +20       +8    800  3-5
+Toxic                  +25      +16   1600  4-6
+Noxious                +40      +32   3200  6-7
+
+ENERGY
+
+Glowing                 +5       +2    200  2
+Incandescent            +7       +3    300  2-3
+Dense                   +9       +4    400  2-4
+Sonic                  +11       +5    500  3-5
+Power                  +13      +10   1000  3-6
+Thermal                +15      +15   1500  4-6
+Radiating              +20      +20   2000  5-6
+Kinetic                +25      +30   3000  6-7
+
+MAGIC
+
+Mystic                  +5       +5    500  2-4
+Magical                +10      +10   1000  4-6
+Ectoplasmic            +20      +20   2500  6-7

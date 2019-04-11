@@ -1,0 +1,31 @@
+Name           Armor  Cost   Usable by
+
+Robes              2    20   All
+Scale Armor        4   100   All except Sorcerer, Druid
+Ring Mail          5   200   All except Sorcerer, Barbarian, Druid
+Chain Mail         6   400   Knight, Paladin, Archer, Robber, Cleric, Ranger
+Splint Mail        7   600   Knight, Paladin, Cleric, Ranger
+Plate Mail         8  1000   Knight, Paladin
+Plate Armor       10  2000   Knight, Paladin
+
+Shield             4   100   Knight, Paladin, Robber, Cleric, Barbarian, Ranger
+
+Cape               1   200   All
+Cloak              1   250   All
+
+Belt               0   100   All
+Boots              1    40   All
+Gauntlets          1   100   All
+Helm               2    60   All
+
+Amulet             0  2000   All
+Necklace           0  1000   All
+Pendant            0   500   All
+
+Broach             0   250   All
+Cameo              0   300   All
+Charm              0    50   All
+Medal              0   100   All
+Scarab             0   200   All
+
+Ring               0   100   All
