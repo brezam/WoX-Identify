@@ -1,5 +1,5 @@
 # 2019.04
-# v0.0.00.3c.A.3 Mark II
+# v0.2.07.3c.A.3 Mark IIc
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
@@ -7,31 +7,35 @@ from tkinter import messagebox
 import world_of_xeen_dictionary as wox_dictionary
 
 def hlep():
-    messagebox.showinfo(title="About", message="World of Xeen equipment information."+
-        "\n\nUncopyright© 2019-2046.")
+    message = ("World of Xeen equipment information.\n\n"
+                "I made this because I was annoyed.\n"
+                "Don't expect much out of it.\n\n\n"
+                "Uncopyright© 2019-2046.")
+    messagebox.showinfo(title="About", message=message)
     return None
 
 def contac():
-    message = "Email: bruno7497@gmail.com\n Only message me if you have spicy memes."
+    message = "Email: bruno7497@gmail.com\nOnly message me if you have spicy memes."
     messagebox.showinfo(title="Contact", message=message)
     return None
 
 def important_info(what):
     if what == 'material':
-        message = "Material enchantments on **accessories** do not " +\
-            "affect armor class and thus have no effect at all when equipped.\n\n" +\
-            "For example: steel ring, ebony belt, emerald pendant, etc. are useless"
+        message = ("Material enchantments on **accessories** do not "
+                    "affect armor class and thus have no effect at all when equipped.\n\n"
+                    "For example: steel ring, ebony belt, emerald pendant, etc. are useless")
     elif what == 'elemental':
-        message = "Elemental enchantments on weapons *only* grant the capacity to cause elemental " +\
+        message = ("Elemental enchantments on weapons *only* grant the capacity to cause elemental "
             "damage.\n\nOn other items, they *only* increase resistance."
+            "This is accounted for in the display result ('-').")
     elif what == 'special':
-        message = "\tSPECIAL WEAPON POWERS:\n\n" +\
-        "Beast Bopper   - 3x damage against Beasts\n" +\
-        "Bug Zapper     - 3x damage against Insects\n" +\
-        "Dragon Slayer  - 3x damage against Dragons\n" +\
-        "Golem Smasher  - 3x damage against Golems\n" +\
-        "Monster Masher - 3x damage against Monsters\n" +\
-        "Undead Eater   - 3x damage against Undead\n"
+        message = ("\tSPECIAL WEAPON POWERS:\n\n"
+        "Beast Bopper   - 3x damage against Beasts\n"
+        "Bug Zapper     - 3x damage against Insects\n"
+        "Dragon Slayer  - 3x damage against Dragons\n"
+        "Golem Smasher  - 3x damage against Golems\n"
+        "Monster Masher - 3x damage against Monsters\n"
+        "Undead Eater   - 3x damage against Undead")
     else:
         message = "There should be something here."
     messagebox.showinfo(title="Important Info", message=message)
@@ -53,7 +57,7 @@ def updatevariables():
 
 
 root = Tk()
-root.title("Might & Magic 4: World of Xeen -- Equipment Identifier for cheapskates. v0.0.00.3c.A.3 Mark II")
+root.title("Might & Magic 4: World of Xeen -- Equipment Identifier for cheapskates. v0.2.07.3c.A.3 Mark IIc")
 
 menu = Menu(root)
 root.config(menu=menu)
@@ -88,10 +92,13 @@ enter_equip1 = Entry(master=root, textvariable=equipment1)
 enter_atrib2 = Entry(master=root, textvariable=attribute2)
 enter_equip2 = Entry(master=root, textvariable=equipment2)
 
-enter_atrib1.grid(row=0, column=1, padx=0, pady=5)
-enter_equip1.grid(row=0, column=2, padx=(0,25), pady=5)
-enter_atrib2.grid(row=0, column=3, padx=(25,0), pady=5)
-enter_equip2.grid(row=0, column=4, padx=(0,50), pady=5)
+enter_atrib1.grid(row=0, column=1, padx=(0,0), pady=5)
+enter_equip1.grid(row=0, column=2, padx=(0,0), pady=5)
+
+Label(master=root, text='vs').grid(row=0, column=3)
+
+enter_atrib2.grid(row=0, column=4, padx=(0,0), pady=5)
+enter_equip2.grid(row=0, column=5, padx=(0,100), pady=5)
 
 enter_atrib1.bind('<Return>', lambda _:updatevariables())
 enter_equip1.bind('<Return>', lambda _:updatevariables())
@@ -112,22 +119,30 @@ stats1 = StringVar()
 stats2 = StringVar()
 
 Label(master=root, textvariable=stats1).grid(row=1, column=1, columnspan=2)
-Label(master=root, textvariable=stats2).grid(row=1, column=3, columnspan=2)
+Label(master=root, textvariable=stats2).grid(row=1, column=4, columnspan=2)
 
-Button(master=root, text=f"{'COMPARE':^50}", command=updatevariables).grid(row=3, column=2, columnspan=2)
+Button(master=root, text="COMPARE", width=80, command=updatevariables).grid(row=3, column=0, columnspan=6)
 
-bottom_text = ("Make sure the .txt files are correct please.\n"
-               "Ignore Special Weapon powers such as Bug Zapper, etc... (Check Important info)\n"
-               "")
-Label(master=root, text=bottom_text).grid(row=4, column=1, columnspan=3, pady=(30,10))
+bottom_text = ("• Make sure to mispell just like the game does:\n"
+               "e.g. 'Burgler', 'Wakazashi', 'Venemous'\n\n"
+               "• Ignore Special Weapon powers such as \n"
+               "Bug Zapper, Beast Bopper...\n"
+               "(Check Important info)\n\n"
+               "• Use correct .txt files otherwise information is not reliable.\n"
+               "                    Files found:")
+Label(master=root, text=bottom_text, justify='left').grid(row=4, column=0, columnspan=6, pady=(30,0))
+
+
+files_loaded = zip(wox_dictionary.files,wox_dictionary.exists)
+loaded_str = '\n'.join([x+"  "+('\u2713' if y == True else 'X') for x,y in files_loaded])
+Label(master=root, text=loaded_str, justify='right').grid(row=5, column=2, columnspan=3, pady=(0,30))
 
 img = PhotoImage(file="game.gif")
 canvas = Canvas(master=root, width=80, height=80)
 canvas.grid(row=4, column=0, padx=10)
 canvas.create_image(40, 40, image=img)
-
 canvas2 = Canvas(master=root, width=80, height=80)
-canvas2.grid(row=4, column=4, padx=10)
+canvas2.grid(row=4, column=5, padx=10)
 canvas2.create_image(40, 40, image=img)
 
 root.mainloop()
