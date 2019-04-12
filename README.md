@@ -8,7 +8,7 @@ Don't expect anything out of it. Information contained within is 13% reliable, u
 
 ----
 
-Are you tired of not knowing if **Flaming** is better than **Burning**? Are you tired of thinking "what the heck does Sonic mean?", and then afterwards realizing it has to do with electricity and not wind (because why not). 
+Are you tired of not knowing if **Flaming** is better than **Burning**? Are you tired of thinking "what the heck does Sonic mean?", and then afterwards realizing it has to do with energy(?) and not wind (because why not). 
 
 **Say no more.**
 
