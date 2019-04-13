@@ -1,5 +1,5 @@
 # 2019.04
-# v0.2.07.3c.A.3 Mark IIc
+# v0.3.08.7c.A Mark IIc - Model Y
 # world_of_xeen_dictionary.py
 
 import re
@@ -94,7 +94,7 @@ if exists[4]:
             ATTRIBU = line.title()
             continue
         attrib, bonus, *_ = re.split(r'\s{2,}', line)
-        bigattrib[attrib.lower()]['attribute'] = f"{ATTRIBU} {bonus}"
+        bigattrib[attrib.lower()]['attribute'] = f"{ATTRIBU}  {bonus}"
 
 ##################################################
 
@@ -110,13 +110,16 @@ def update_stats(attr,name):
     if isinstance(EQU_DIC['damagerange'], int): 
         EQU_DIC['damagerange'] = (0,0)
 
-    stats[0] = ATTR_DIC['to_hit']
+    stats[0] = f"{ATTR_DIC['to_hit']:+d}"
     result_attack = ((ATTR_DIC['damage'] + att) for att in EQU_DIC['damagerange'])
     stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC['damage']}  {ATTR_DIC['damage']:+d})"
     stats[2] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_dam']}"
     stats[3] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_res']}"
-    stats[4] = EQU_DIC['ac'] + ATTR_DIC['ac']
+    stats[4] = f"{EQU_DIC['ac'] + ATTR_DIC['ac']:+d}"
     stats[5] = ATTR_DIC['attribute']
+
+    if attr == 'power': #Edge case
+        for x in [2,3,5]: stats[x] = stats[x]+' (maybe)' 
 
     if not name:
         pass
@@ -130,6 +133,6 @@ def update_stats(attr,name):
 def main():
     print(update_stats("",""))
     print("You should be running the other file. world_of_xeen_equipmentcompare.py\n")
-    input("Press any key to finish: >")
+    input("Press enter to finish: >")
 
 if __name__ == "__main__": main()

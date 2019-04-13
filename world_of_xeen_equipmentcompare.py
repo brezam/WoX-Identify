@@ -1,5 +1,5 @@
 # 2019.04
-# v0.2.07.3c.A.3 Mark IIc
+# v0.3.08.7c.A Mark IIc - Model Y
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
@@ -57,9 +57,10 @@ def updatevariables():
 
 
 root = Tk()
-root.title("Might & Magic 4: World of Xeen -- Equipment Identifier for cheapskates. v0.2.07.3c.A.3 Mark IIc")
+root.title("Might & Magic 4-5: World of Xeen - Equipment Identifier for cheapskates."
+           "  v0.3.08.7c.A Mark IIc - Model Y")
 
-menu = Menu(root)
+menu = Menu(master=root)
 root.config(menu=menu)
 
 filemenu = Menu(menu, tearoff=0)
@@ -127,7 +128,7 @@ bottom_text = ("• Make sure to mispell just like the game does:\n"
                "e.g. 'Burgler', 'Wakazashi', 'Venemous'\n\n"
                "• Ignore Special Weapon powers such as \n"
                "Bug Zapper, Beast Bopper...\n"
-               "(Check Important info)\n\n"
+               "(Check Important info on what they mean)\n\n"
                "• Use correct .txt files otherwise information is not reliable.\n"
                "                    Files found:")
 Label(master=root, text=bottom_text, justify='left').grid(row=4, column=0, columnspan=6, pady=(30,0))
