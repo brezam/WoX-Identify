@@ -1,0 +1,37 @@
+Name          Damage  Cost   Usable by
+
+Broad Sword      3d4   100   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Club             1d3     1   All
+Cudgel           1d6    15   All except Sorcerer
+Cutlass          2d4    40   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Dagger           2d2     8   All except Cleric
+Flail           1d10   100   All except Sorcerer
+Hand Axe         2d3    10   All except Cleric, Sorcerer
+Katana           4d3   150   Knight, Paladin, Ninja
+Long Sword       3d3    50   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Mace             2d4    50   All except Sorcerer
+Maul             1d8    30   All except Sorcerer
+Nunchakas        2d3    30   Knight, Paladin, Ninja
+Sabre            4d2    60   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Scimitar         2d5    80   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Short Sword      2d3    15   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Spear            1d9    15   All except Cleric, Sorcerer
+Wakazashi        3d3    60   Knight, Paladin, Ninja
+
+Bardiche         4d4   200   All except Cleric, Sorcerer, Druid
+Battle Axe       3d5   100   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Flamberge        4d5   400   Knight, Paladin, Archer, Ranger
+Glaive           4d3    80   All except Cleric, Sorcerer, Druid
+Grand Axe        3d6   200   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Great Axe        3d7   300   Knight, Paladin, Archer, Robber, Barbarian, Ranger
+Halberd          3d6   250   All except Cleric, Sorcerer, Druid
+Hammer           2d5   120   All except Sorcerer
+Naginata         5d3   300   Knight, Paladin, Ninja
+Pike             2d8   180   All except Cleric, Sorcerer, Druid
+Staff            2d4    40   All
+Trident          2d6   100   All except Cleric, Sorcerer, Druid
+
+Crossbow         4d2    50   All except Cleric, Sorcerer, Druid
+Long Bow         5d2   100   All except Cleric, Sorcerer, Druid
+Short Bow        3d2    25   All except Cleric, Sorcerer, Druid
+Sling            2d2    15   All except Cleric, Sorcerer, Druid
