@@ -1,10 +1,11 @@
 # 2019.04
-# v0.3.08.7c.A Mark IIc - Model Y
+# v0.4.182.5d.B Mark IV{$\delta$} - Model X
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
 from tkinter import messagebox
-import world_of_xeen_dictionary as wox_dictionary
+import pickle
+from pathlib import Path
 
 def hlep():
     message = ("World of Xeen equipment information.\n\n"
@@ -41,11 +42,42 @@ def important_info(what):
     messagebox.showinfo(title="Important Info", message=message)
     return None
 
+def update_stats(attr,name):
+    name = name.lower().strip()
+    attr = attr.lower().strip()
+    ATTR_DIC = bigattrib[attr]
+    EQU_DIC = bigequip[name]
+
+    stats = ['']*6
+
+    if isinstance(EQU_DIC['damagerange'], int): 
+        EQU_DIC['damagerange'] = (0,0)
+
+    stats[0] = f"{ATTR_DIC['to_hit']:+d}"
+    result_attack = ((ATTR_DIC['damage'] + att) for att in EQU_DIC['damagerange'])
+    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC['damage']}  {ATTR_DIC['damage']:+d})"
+    stats[2] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_dam']}"
+    stats[3] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_res']}"
+    stats[4] = f"{EQU_DIC['ac'] + ATTR_DIC['ac']:+d}"
+    stats[5] = ATTR_DIC['attribute']
+
+    if attr == 'power': #Edge case
+        for x in [2,3,5]: stats[x] = stats[x]+' (maybe)' 
+
+    if not name:
+        pass
+    elif EQU_DIC['type'] == 'weapon':
+        stats[3:5] = ['-']*2
+    else:
+        stats[:3] = ['-']*3
+
+    return stats
+
 def update_label(side):
     stats_label = stats1 if side == 'L' else stats2
     equipment = equipment1 if side == 'L' else equipment2
     attribute = attribute1 if side == 'L' else attribute2
-    stats = wox_dictionary.update_stats(attr=attribute.get(), name=equipment.get())
+    stats = update_stats(attr=attribute.get(), name=equipment.get())
     stats = [str(x) for x in stats]
     stats_label.set('\n'.join(stats))
     return None
@@ -55,10 +87,37 @@ def updatevariables():
     update_label('R')
     return None
 
+def dd():
+    return defaultdict(int)
+
+def load_dictionary_file():
+
+    with open("dictionary.pkl", "rb") as handle:
+        bigattrib, bigequip = pickle.load(handle)
+
+
+    file = Path() / 'dictionary.pkl'
+    size = file.stat().st_size
+
+    ignoretxt = Path() / 'ignore.txt'
+
+    if size != 10782 and not ignoretxt.exists():
+        print("Wrong dictionary.pkl file. Try to read it anyway?")
+        answer = input("[Y]es, [N]o, [I]gnore this warning every time.\n>").lower()
+        if answer[:1] == 'n':
+            raise SystemExit()
+        if answer[:1] == 'i':
+            with open("ignore.txt", "a") as f:
+                pass
+
+    return bigattrib, bigequip, size
+
+
+bigattrib, bigequip, pkl_file_size = load_dictionary_file()
 
 root = Tk()
 root.title("Might & Magic 4-5: World of Xeen - Equipment Identifier for cheapskates."
-           "  v0.3.08.7c.A Mark IIc - Model Y")
+           "  v0.4")
 
 menu = Menu(master=root)
 root.config(menu=menu)
@@ -129,14 +188,12 @@ bottom_text = ("• Make sure to mispell just like the game does:\n"
                "• Ignore Special Weapon powers such as \n"
                "Bug Zapper, Beast Bopper...\n"
                "(Check Important info on what they mean)\n\n"
-               "• Use correct .txt files otherwise information is not reliable.\n"
-               "                    Files found:")
+               "• Use correct .pkl file otherwise information is not reliable.")
 Label(master=root, text=bottom_text, justify='left').grid(row=4, column=0, columnspan=6, pady=(30,0))
 
-
-files_loaded = zip(wox_dictionary.files,wox_dictionary.exists)
-loaded_str = '\n'.join([x+"  "+('\u2713' if y == True else 'X') for x,y in files_loaded])
-Label(master=root, text=loaded_str, justify='right').grid(row=5, column=2, columnspan=3, pady=(0,30))
+loaded_pkl = (".pkl size found: {} bytes\n".format(pkl_file_size)+
+              ".pkl size expected: 10782 bytes")
+Label(master=root, text=loaded_pkl, justify='right').grid(row=5, column=2, columnspan=3, pady=(0,30))
 
 img = PhotoImage(file="game.gif")
 canvas = Canvas(master=root, width=80, height=80)
