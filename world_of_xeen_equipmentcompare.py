@@ -5,6 +5,7 @@
 from tkinter import *
 from tkinter import messagebox
 import pickle
+from collections import defaultdict
 from pathlib import Path
 
 def hlep():
@@ -116,8 +117,8 @@ def load_dictionary_file(expected_pkl_size):
 
     return bigattrib, bigequip, size
 
-
-bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size = 10782)
+expected_pkl_size = 10680
+bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size = 10680)
 
 root = Tk()
 root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.5")
@@ -195,7 +196,7 @@ bottom_text = ("• Make sure to mispell just like the game does:\n"
 Label(master=root, text=bottom_text, justify='left').grid(row=4, column=0, columnspan=6, pady=(30,0))
 
 loaded_pkl = (".pkl size found: {} bytes\n".format(pkl_file_size)+
-              ".pkl size expected: 10782 bytes")
+              ".pkl size expected: {} bytes".format(expected_pkl_size))
 Label(master=root, text=loaded_pkl, justify='right').grid(row=5, column=2, columnspan=3, pady=(0,30))
 
 img = PhotoImage(file="game.gif")
