@@ -1,5 +1,5 @@
 # 2019.04
-# v0.4.182.5d.B Mark IV{$\delta$} - Model X
+# v0.5.182.5d.B Mark IV{$\delta$} - Model X
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
@@ -88,20 +88,24 @@ def updatevariables():
     return None
 
 def dd():
+    """ unpickling collections.defaultdict needs this to work """
     return defaultdict(int)
 
-def load_dictionary_file():
-
-    with open("dictionary.pkl", "rb") as handle:
-        bigattrib, bigequip = pickle.load(handle)
-
+def load_dictionary_file(expected_pkl_size):
+    try:
+        with open("dictionary.pkl", "rb") as handle:
+            bigattrib, bigequip = pickle.load(handle)
+    except FileNotFoundError:
+        print("Dictionary file (dictionary.pkl) not found.\n")
+        input("Press Enter to exit.")
+        raise SystemExit()
 
     file = Path() / 'dictionary.pkl'
     size = file.stat().st_size
 
     ignoretxt = Path() / 'ignore.txt'
 
-    if size != 10782 and not ignoretxt.exists():
+    if size != expected_pkl_size and not ignoretxt.exists():
         print("Wrong dictionary.pkl file. Try to read it anyway?")
         answer = input("[Y]es, [N]o, [I]gnore this warning every time.\n>").lower()
         if answer[:1] == 'n':
@@ -113,11 +117,10 @@ def load_dictionary_file():
     return bigattrib, bigequip, size
 
 
-bigattrib, bigequip, pkl_file_size = load_dictionary_file()
+bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size = 10782)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen - Equipment Identifier for cheapskates."
-           "  v0.4")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.5")
 
 menu = Menu(master=root)
 root.config(menu=menu)
