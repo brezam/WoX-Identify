@@ -1,11 +1,10 @@
 # 2019.04
-# v0.6.182.5d.B Mark IV{$\delta$} - Model X
+# v0.8.182.5d.B Mark IV{$\delta$} - Model X
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
 from tkinter import messagebox
 import pickle
-from collections import defaultdict
 from pathlib import Path
 
 def hlep():
@@ -46,21 +45,18 @@ def important_info(what):
 def update_stats(attr,name):
     name = name.lower().strip()
     attr = attr.lower().strip()
-    ATTR_DIC = bigattrib[attr]
-    EQU_DIC = bigequip[name]
+    ATTR_DIC = bigattrib.get(attr,{})
+    EQU_DIC = bigequip.get(name,{})
 
-    stats = ['']*6
+    stats = [None]*6
 
-    if isinstance(EQU_DIC['damagerange'], int): 
-        EQU_DIC['damagerange'] = (0,0)
-
-    stats[0] = f"{ATTR_DIC['to_hit']:+d}"
-    result_attack = ((ATTR_DIC['damage'] + att) for att in EQU_DIC['damagerange'])
-    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC['damage']}  {ATTR_DIC['damage']:+d})"
-    stats[2] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_dam']}"
-    stats[3] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_res']}"
-    stats[4] = f"{EQU_DIC['ac'] + ATTR_DIC['ac']:+d}"
-    stats[5] = ATTR_DIC['attribute']
+    stats[0] = f"{ATTR_DIC.get('to_hit',0):+d}"
+    result_attack = ((ATTR_DIC.get('damage',0) + att) for att in EQU_DIC.get('damagerange',(0,0)))
+    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC.get('damage',0)}  {ATTR_DIC.get('damage',0):+d})"
+    stats[2] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_dam',0)}"
+    stats[3] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_res',0)}"
+    stats[4] = f"{EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0):+d}"
+    stats[5] = ATTR_DIC.get('attribute', None)
 
     if attr == 'power': #Edge case
         for x in [2,3,5]: stats[x] = stats[x]+' (maybe)' 
@@ -88,10 +84,6 @@ def updatevariables():
     update_label('R')
     return None
 
-def dd():
-    """ unpickling collections.defaultdict needs this to work """
-    return defaultdict(int)
-
 def load_dictionary_file(expected_pkl_size):
     file = Path() / 'dictionary.pkl'
     if not file.exists():
@@ -118,11 +110,11 @@ def load_dictionary_file(expected_pkl_size):
 
     return bigattrib, bigequip, size
 
-expected_pkl_size = 10680
-bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size = 10680)
+expected_pkl_size = 8749
+bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.6")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.8")
 
 menu = Menu(master=root)
 root.config(menu=menu)
