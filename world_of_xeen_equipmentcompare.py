@@ -192,12 +192,15 @@ loaded_pkl = (".pkl size found: {} bytes\n".format(pkl_file_size)+
               ".pkl size expected: {} bytes".format(expected_pkl_size))
 Label(master=root, text=loaded_pkl, justify='right').grid(row=5, column=2, columnspan=3, pady=(0,30))
 
-img = PhotoImage(file="game.gif")
-canvas = Canvas(master=root, width=80, height=80)
-canvas.grid(row=4, column=0, padx=10)
-canvas.create_image(40, 40, image=img)
-canvas2 = Canvas(master=root, width=80, height=80)
-canvas2.grid(row=4, column=5, padx=10)
-canvas2.create_image(40, 40, image=img)
+try:
+    img = PhotoImage(file="game.gif")
+    canvas = Canvas(master=root, width=80, height=80)
+    canvas.grid(row=4, column=0, padx=10)
+    canvas.create_image(40, 40, image=img)
+    canvas2 = Canvas(master=root, width=80, height=80)
+    canvas2.grid(row=4, column=5, padx=10)
+    canvas2.create_image(40, 40, image=img)
+except TclError:
+    pass
 
 root.mainloop()
