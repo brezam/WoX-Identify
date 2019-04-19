@@ -1,18 +1,13 @@
 # 2019.04
-# v0.3.08.7c.A Mark IIc - Model Y
+# v0.8
 # world_of_xeen_dictionary_maker.py
 
 import re
 import os.path
 import pickle
-from collections import defaultdict
 
-def dd():
-    """ unpickling collections.defaultdict needs this to work """
-    return defaultdict(int)
-
-bigequip = defaultdict(dd)
-bigattrib = defaultdict(dd)
+bigequip = {}
+bigattrib = {}
 
 ################################################## ERROR CHECKS
 
@@ -45,7 +40,7 @@ def readfiles():
             weapon, strdamage, *_ = re.split(r'\s{2,}', line)
             no_rolls, dice_size = map(int, strdamage.split("d"))
 
-            bigequip[weapon.lower()]['damage'] = strdamage
+            bigequip.setdefault(weapon.lower(),{})['damage'] = strdamage
             bigequip[weapon.lower()]['damagerange'] = (no_rolls, no_rolls*dice_size)
             bigequip[weapon.lower()]['type'] = 'weapon'
 
@@ -57,7 +52,7 @@ def readfiles():
             if not line:
                 continue
             weapon, ac, *_ = re.split(r'\s{2,}', line)
-            bigequip[weapon.lower()]['ac'] = int(ac)
+            bigequip.setdefault(weapon.lower(),{})['ac'] = int(ac)
 
     ################################################## BUILDING ATTRIBUTE DICTIONARY
     if exists[2]:
@@ -71,7 +66,7 @@ def readfiles():
                 ELEM = line.title()
                 continue
             attrib, res, dam, *_ = re.split(r'\s{2,}', line)
-            bigattrib[attrib.lower()]['element'] = ELEM
+            bigattrib.setdefault(attrib.lower(),{})['element'] = ELEM
             bigattrib[attrib.lower()]['elem_res'] = res
             bigattrib[attrib.lower()]['elem_dam'] = dam
             bigattrib[attrib.lower()]['ac'] = int(ac)
@@ -84,7 +79,7 @@ def readfiles():
             if not line:
                 continue
             material, to_hit, dam, ac, *_ = re.split(r'\s{2,}', line)
-            bigattrib[material.lower()]['to_hit'] = int(to_hit)
+            bigattrib.setdefault(material.lower(),{})['to_hit'] = int(to_hit)
             bigattrib[material.lower()]['damage'] = int(dam)
             bigattrib[material.lower()]['ac'] = int(ac)
 
@@ -100,9 +95,11 @@ def readfiles():
                 ATTRIBU = line.title()
                 continue
             attrib, bonus, *_ = re.split(r'\s{2,}', line)
-            bigattrib[attrib.lower()]['attribute'] = f"{ATTRIBU}  {bonus}"
+            bigattrib.setdefault(attrib.lower(),{})['attribute'] = f"{ATTRIBU}  {bonus}"
 
     return bigattrib, bigequip
+
+########################################################
 
 def build_pickle_file(bigattrib, bigequip):
     with open("dictionary.pkl", "wb") as handle:
@@ -110,28 +107,22 @@ def build_pickle_file(bigattrib, bigequip):
     return
 
 
-
-##################################################
-
 # stats = [to hit, damage, elem_dam, elem_res, ac, attribute]
 def update_stats(attr,name):
     name = name.lower().strip()
     attr = attr.lower().strip()
-    ATTR_DIC = bigattrib[attr]
-    EQU_DIC = bigequip[name]
+    ATTR_DIC = bigattrib.get(attr,{})
+    EQU_DIC = bigequip.get(name,{})
 
-    stats = ['']*6
+    stats = [None]*6
 
-    if isinstance(EQU_DIC['damagerange'], int): 
-        EQU_DIC['damagerange'] = (0,0)
-
-    stats[0] = f"{ATTR_DIC['to_hit']:+d}"
-    result_attack = ((ATTR_DIC['damage'] + att) for att in EQU_DIC['damagerange'])
-    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC['damage']}  {ATTR_DIC['damage']:+d})"
-    stats[2] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_dam']}"
-    stats[3] = f"{ATTR_DIC['element']}  {ATTR_DIC['elem_res']}"
-    stats[4] = f"{EQU_DIC['ac'] + ATTR_DIC['ac']:+d}"
-    stats[5] = ATTR_DIC['attribute']
+    stats[0] = f"{ATTR_DIC.get('to_hit',0):+d}"
+    result_attack = ((ATTR_DIC.get('damage',0) + att) for att in EQU_DIC.get('damagerange',(0,0)))
+    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC.get('damage',0)}  {ATTR_DIC.get('damage',0):+d})"
+    stats[2] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_dam',0)}"
+    stats[3] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_res',0)}"
+    stats[4] = f"{EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0):+d}"
+    stats[5] = ATTR_DIC.get('attribute', None)
 
     if attr == 'power': #Edge case
         for x in [2,3,5]: stats[x] = stats[x]+' (maybe)' 
