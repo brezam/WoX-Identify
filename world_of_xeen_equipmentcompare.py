@@ -1,5 +1,5 @@
 # 2019.04
-# v0.5.182.5d.B Mark IV{$\delta$} - Model X
+# v0.6.182.5d.B Mark IV{$\delta$} - Model X
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
@@ -93,26 +93,27 @@ def dd():
     return defaultdict(int)
 
 def load_dictionary_file(expected_pkl_size):
-    try:
-        with open("dictionary.pkl", "rb") as handle:
-            bigattrib, bigequip = pickle.load(handle)
-    except FileNotFoundError:
-        print("Dictionary file (dictionary.pkl) not found.\n")
-        input("Press Enter to exit.")
-        raise SystemExit()
-
     file = Path() / 'dictionary.pkl'
-    size = file.stat().st_size
+    if not file.exists():
+        file = Path() / 'world_of_xeen_dictionary_maker' / 'dictionary.pkl'
+        if not file.exists():
+            print("Dictionary file (dictionary.pkl) not found.\n")
+            input("Press Enter to exit.")
+            raise SystemExit()
 
+    with open(file, "rb") as handle:
+        bigattrib, bigequip = pickle.load(handle)
+    
+    size = file.stat().st_size
     ignoretxt = Path() / 'ignore.txt'
 
     if size != expected_pkl_size and not ignoretxt.exists():
-        print("Wrong dictionary.pkl file. Try to read it anyway?")
-        answer = input("[Y]es, [N]o, [I]gnore this warning every time.\n>").lower()
+        print("Maybe you have the wrong dictionary.pkl file. Use it anyway?")
+        answer = input("[Y]es, [N]o, [I]gnore this warning for all time.\n>").lower()
         if answer[:1] == 'n':
             raise SystemExit()
         if answer[:1] == 'i':
-            with open("ignore.txt", "a") as f:
+            with open("ignore.txt", "w") as f:
                 pass
 
     return bigattrib, bigequip, size
@@ -121,7 +122,7 @@ expected_pkl_size = 10680
 bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size = 10680)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.5")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.6")
 
 menu = Menu(master=root)
 root.config(menu=menu)
