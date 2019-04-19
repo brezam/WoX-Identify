@@ -1,5 +1,5 @@
 # 2019.04
-# v0.8.182.5d.B Mark IV{$\delta$} - Model X
+# v0.8
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
