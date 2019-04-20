@@ -19,6 +19,6 @@ TO DO List:
 - [X] Use already available information because of lazyness ♥[Gamefaq's](https://bit.ly/2Iajrox)
 - [ ] Check if the GUI displays accurate results. (6.03% done)
 
-##I made an .exe version for those on Windows who can't install Python. May or may not work. Check [/dist](https://github.com/BruE0/WoX-Identify/tree/master/dist/world_of_xeen_equipmentcompare)
+#### .exe version for those on Windows who can't install Python. May or may not work. Check [/dist](https://github.com/BruE0/WoX-Identify/tree/master/dist/world_of_xeen_equipmentcompare)
 
 
