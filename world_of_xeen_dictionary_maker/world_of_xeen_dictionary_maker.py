@@ -1,9 +1,9 @@
 # 2019.04
-# v0.8
+# v0.8.1
 # world_of_xeen_dictionary_maker.py
 
 import re
-import os.path
+from pathlib import Path
 import pickle
 
 bigequip = {}
@@ -19,7 +19,7 @@ def readfiles():
     exists = []
 
     for file in files:
-        exists.append(os.path.isfile(file))
+        exists.append( (Path() / file).exists() )
 
     if False in exists:
         error_message = ["Missing dictionary files. Please recheck:\n"]
@@ -27,6 +27,8 @@ def readfiles():
             error_message.append(file+" Found"*exists[index])
 
         print("\n".join(error_message))
+        input()
+        raise SystemExit()
 
     ################################################## BUILDING EQUIPMENT DICTIONARY
 
