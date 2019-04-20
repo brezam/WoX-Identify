@@ -1,4 +1,4 @@
-# Might & Magic IV & V - World of Xeen -- Equipment Identifier for cheapskates.
+﻿# Might & Magic IV & V - World of Xeen -- Equipment Identifier for cheapskates.
 
 ## I made this because I was annoyed
 
@@ -19,6 +19,6 @@ TO DO List:
 - [X] Use already available information because of lazyness ♥[Gamefaq's](https://bit.ly/2Iajrox)
 - [ ] Check if the GUI displays accurate results. (6.03% done)
 
-#### There's a .exe version for those on Windows who can't install Python. May or may not work. Check [/dist](https://github.com/BruE0/WoX-Identify/tree/master/dist/world_of_xeen_equipmentcompare)
+#### There's a .exe version for those on Windows 10 x64 who can't install Python. May or may not work. Check [/dist](https://github.com/BruE0/WoX-Identify/tree/master/dist/world_of_xeen_equipmentcompare)
 
 
