@@ -63,7 +63,7 @@ def update_stats(attr,name):
 
     if not name:
         pass
-    elif EQU_DIC['type'] == 'weapon':
+    elif EQU_DIC.get('type') == 'weapon':
         stats[3:5] = ['-']*2
     else:
         stats[:3] = ['-']*3
