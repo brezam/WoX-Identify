@@ -174,10 +174,10 @@ enter_equip1.bind('<Return>', lambda _:updatevariables())
 enter_atrib2.bind('<Return>', lambda _:updatevariables())
 enter_equip2.bind('<Return>', lambda _:updatevariables())
 
-status_left = [Label(master=root, bg="red"),
-               Label(master=root, bg="red")]
-status_right = [Label(master=root, bg="red"),
-               Label(master=root, bg="red")]
+status_left = [Label(master=root, bg="red", font=('TkDefaultFont',1)),
+               Label(master=root, bg="red", font=('TkDefaultFont',1))]
+status_right = [Label(master=root, bg="red", font=('TkDefaultFont',1)),
+               Label(master=root, bg="red", font=('TkDefaultFont',1))]
 
 status_left[0].grid(row=1, column=1, padx=0)
 status_left[1].grid(row=1, column=2, padx=0)
