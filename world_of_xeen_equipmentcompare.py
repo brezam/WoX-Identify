@@ -1,5 +1,5 @@
 # 2019.04
-# v0.9
+# v0.9.3
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
@@ -53,6 +53,7 @@ def color_label(att_fail, equ_fail, side):
     else:
         status_label[1].config(bg="green")
     return
+
 def update_stats(attr,name):
     name = name.lower().strip()
     attr = attr.lower().strip()
@@ -126,7 +127,7 @@ expected_pkl_size = 8749
 bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.9")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier  v0.9.2")
 
 menu = Menu(master=root)
 root.config(menu=menu)
@@ -151,10 +152,7 @@ helpmenu.add_command(label='Contact', command=contac)
 
 Label(master=root, text='Attribute | Name', relief="groove").grid(row=0, column=0, padx=5)
 
-attribute1 = StringVar()
-equipment1 = StringVar()
-attribute2 = StringVar()
-equipment2 = StringVar()
+attribute1, equipment1, attribute2, equipment2 = (StringVar() for _ in range(4))
 
 enter_atrib1 = Entry(master=root, textvariable=attribute1)
 enter_equip1 = Entry(master=root, textvariable=equipment1)
@@ -169,15 +167,12 @@ Label(master=root, text='vs').grid(row=0, column=3)
 enter_atrib2.grid(row=0, column=4, padx=(0,0), pady=5)
 enter_equip2.grid(row=0, column=5, padx=(0,100), pady=5)
 
-enter_atrib1.bind('<Return>', lambda _:updatevariables())
-enter_equip1.bind('<Return>', lambda _:updatevariables())
-enter_atrib2.bind('<Return>', lambda _:updatevariables())
-enter_equip2.bind('<Return>', lambda _:updatevariables())
+for item in (enter_atrib1, enter_atrib2, enter_equip1, enter_equip2):
+    item.bind('<Return>', lambda _:updatevariables())
 
-status_left = [Label(master=root, bg="red", font=('TkDefaultFont',1)),
-               Label(master=root, bg="red", font=('TkDefaultFont',1))]
-status_right = [Label(master=root, bg="red", font=('TkDefaultFont',1)),
-               Label(master=root, bg="red", font=('TkDefaultFont',1))]
+status_left = [Label(master=root, bg="red", font=('TkDefaultFont',1)) for _ in range(2)]
+status_right = [Label(master=root, bg="red", font=('TkDefaultFont',1)) for _ in range(2)]
+
 
 status_left[0].grid(row=1, column=1, padx=0)
 status_left[1].grid(row=1, column=2, padx=0)
