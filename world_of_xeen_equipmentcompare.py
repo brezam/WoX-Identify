@@ -1,5 +1,5 @@
 # 2019.04
-# v0.8
+# v0.9
 # world_of_xeen_equipmentcompare.py
 
 from tkinter import *
@@ -42,6 +42,17 @@ def important_info(what):
     messagebox.showinfo(title="Important Info", message=message)
     return None
 
+def color_label(att_fail, equ_fail, side):
+    status_label = status_left if side == "L" else status_right
+    if att_fail:
+        status_label[0].config(bg="red")
+    else:
+        status_label[0].config(bg="green")
+    if equ_fail:
+        status_label[1].config(bg="red")
+    else:
+        status_label[1].config(bg="green")
+    return
 def update_stats(attr,name):
     name = name.lower().strip()
     attr = attr.lower().strip()
@@ -68,16 +79,17 @@ def update_stats(attr,name):
     else:
         stats[:3] = ['-']*3
 
-    return stats
+    return stats, ATTR_DIC == {}, EQU_DIC == {}
 
 def update_label(side):
     stats_label = stats1 if side == 'L' else stats2
     equipment = equipment1 if side == 'L' else equipment2
     attribute = attribute1 if side == 'L' else attribute2
-    stats = update_stats(attr=attribute.get(), name=equipment.get())
+    stats, att_fail, equ_fail  = update_stats(attr=attribute.get(), name=equipment.get())
     stats = [str(x) for x in stats]
     stats_label.set('\n'.join(stats))
-    return None
+    color_label(att_fail, equ_fail, side)
+    return
 
 def updatevariables():
     update_label('L')
@@ -114,7 +126,7 @@ expected_pkl_size = 8749
 bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.8")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier for cheapskates.  v0.9")
 
 menu = Menu(master=root)
 root.config(menu=menu)
@@ -162,6 +174,15 @@ enter_equip1.bind('<Return>', lambda _:updatevariables())
 enter_atrib2.bind('<Return>', lambda _:updatevariables())
 enter_equip2.bind('<Return>', lambda _:updatevariables())
 
+status_left = [Label(master=root, bg="red"),
+               Label(master=root, bg="red")]
+status_right = [Label(master=root, bg="red"),
+               Label(master=root, bg="red")]
+
+status_left[0].grid(row=1, column=1, padx=0)
+status_left[1].grid(row=1, column=2, padx=0)
+status_right[0].grid(row=1, column=4, padx=0)
+status_right[1].grid(row=1, column=5, padx=(0,100))
 
 DYNLAB="""to Hit:
 Physical Damage:
@@ -170,15 +191,15 @@ Elemental Resistance:
 Armor Class Bonus:
 Attribute Bonus:"""
 
-Label(master=root, text=DYNLAB, justify="right").grid(row=1, column=0, pady=5)
+Label(master=root, text=DYNLAB, justify="right").grid(row=2, column=0, pady=5)
 
 stats1 = StringVar()
 stats2 = StringVar()
 
-Label(master=root, textvariable=stats1).grid(row=1, column=1, columnspan=2)
-Label(master=root, textvariable=stats2).grid(row=1, column=4, columnspan=2)
+Label(master=root, textvariable=stats1).grid(row=2, column=1, columnspan=2)
+Label(master=root, textvariable=stats2).grid(row=2, column=4, columnspan=2)
 
-Button(master=root, text="COMPARE", width=80, command=updatevariables).grid(row=3, column=0, columnspan=6)
+Button(master=root, text="COMPARE", width=80, command=updatevariables).grid(row=4, column=0, columnspan=6)
 
 bottom_text = ("• Make sure to mispell just like the game does:\n"
                "e.g. 'Burgler', 'Wakazashi', 'Venemous'\n\n"
@@ -186,19 +207,19 @@ bottom_text = ("• Make sure to mispell just like the game does:\n"
                "Bug Zapper, Beast Bopper...\n"
                "(Check Important info on what they mean)\n\n"
                "• Use correct .pkl file otherwise information is not reliable.")
-Label(master=root, text=bottom_text, justify='left').grid(row=4, column=0, columnspan=6, pady=(30,0))
+Label(master=root, text=bottom_text, justify='left').grid(row=5, column=0, columnspan=6, pady=(30,0))
 
 loaded_pkl = (".pkl size found: {} bytes\n".format(pkl_file_size)+
               ".pkl size expected: {} bytes".format(expected_pkl_size))
-Label(master=root, text=loaded_pkl, justify='right').grid(row=5, column=2, columnspan=3, pady=(0,30))
+Label(master=root, text=loaded_pkl, justify='right').grid(row=6, column=2, columnspan=3, pady=(0,30))
 
 try:
     img = PhotoImage(file="game.gif")
     canvas = Canvas(master=root, width=80, height=80)
-    canvas.grid(row=4, column=0, padx=10)
+    canvas.grid(row=5, column=0, padx=10)
     canvas.create_image(40, 40, image=img)
     canvas2 = Canvas(master=root, width=80, height=80)
-    canvas2.grid(row=4, column=5, padx=10)
+    canvas2.grid(row=5, column=5, padx=10)
     canvas2.create_image(40, 40, image=img)
 except TclError:
     pass
