@@ -1,6 +1,7 @@
-# 2019.04
-# v0.8.1
+#!/usr/bin/env python3
 # world_of_xeen_dictionary_maker.py
+# 2019.04
+# v0.9.4
 
 import re
 from pathlib import Path
@@ -11,7 +12,7 @@ bigattrib = {}
 
 ################################################## ERROR CHECKS
 
-def readfiles():
+def read_txt_files():
 
     files = ['wox_weapons.txt', 'wox_armor.txt', 'wox_elements.txt',
             'wox_material.txt', 'wox_attributes.txt']
@@ -111,19 +112,19 @@ def build_pickle_file(bigattrib, bigequip):
 
 # stats = [to hit, damage, elem_dam, elem_res, ac, attribute]
 def update_stats(attr,name):
-    name = name.lower().strip()
-    attr = attr.lower().strip()
+    name = name.strip().lower()
+    attr = attr.strip().lower()
     ATTR_DIC = bigattrib.get(attr,{})
     EQU_DIC = bigequip.get(name,{})
 
     stats = [None]*6
 
-    stats[0] = f"{ATTR_DIC.get('to_hit',0):+d}"
+    stats[0] = "{:+d}".format(ATTR_DIC.get('to_hit',0))
     result_attack = ((ATTR_DIC.get('damage',0) + att) for att in EQU_DIC.get('damagerange',(0,0)))
-    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC.get('damage',0)}  {ATTR_DIC.get('damage',0):+d})"
-    stats[2] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_dam',0)}"
-    stats[3] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_res',0)}"
-    stats[4] = f"{EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0):+d}"
+    stats[1] = "{} → {}  ({}  {:+d})".format(*result_attack, EQU_DIC.get('damage',0), ATTR_DIC.get('damage',0))
+    stats[2] = "{}  {}".format(ATTR_DIC.get('element',0), ATTR_DIC.get('elem_dam',0))
+    stats[3] = "{}  {}".format(ATTR_DIC.get('element',0), ATTR_DIC.get('elem_res',0))
+    stats[4] = "{:+d}".format(EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0))
     stats[5] = ATTR_DIC.get('attribute', None)
 
     if attr == 'power': #Edge case
@@ -131,17 +132,17 @@ def update_stats(attr,name):
 
     if not name:
         pass
-    elif EQU_DIC['type'] == 'weapon':
+    elif EQU_DIC.get('type') == 'weapon':
         stats[3:5] = ['-']*2
     else:
         stats[:3] = ['-']*3
 
-    return stats
+    return stats, ATTR_DIC == {}, EQU_DIC == {}
 
 def main():
-    bigattrib, bigequip = readfiles()
+    bigattrib, bigequip = read_txt_files()
     build_pickle_file(bigattrib, bigequip)
     print("[to hit, damage, elem_dam, elem_res, ac, attribute]")
-    print(update_stats("fiery","long sword"))
+    print(update_stats("fiery","long sword")[0])
 
 if __name__ == "__main__": main()
