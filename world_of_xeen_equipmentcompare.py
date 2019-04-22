@@ -192,7 +192,7 @@ stats1 = StringVar()
 stats2 = StringVar()
 
 Label(master=root, textvariable=stats1).grid(row=2, column=1, columnspan=2)
-Label(master=root, textvariable=stats2).grid(row=2, column=4, columnspan=2)
+Label(master=root, textvariable=stats2).grid(row=2, column=4, columnspan=2, padx=(0,100))
 
 Button(master=root, text="COMPARE", width=80, command=updatevariables).grid(row=4, column=0, columnspan=6)
 
