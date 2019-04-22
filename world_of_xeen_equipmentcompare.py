@@ -55,19 +55,19 @@ def color_label(att_fail, equ_fail, side):
     return
 
 def update_stats(attr,name):
-    name = name.lower().strip()
-    attr = attr.lower().strip()
+    name = name.strip().lower()
+    attr = attr.strip().lower()
     ATTR_DIC = bigattrib.get(attr,{})
     EQU_DIC = bigequip.get(name,{})
 
     stats = [None]*6
 
-    stats[0] = f"{ATTR_DIC.get('to_hit',0):+d}"
+    stats[0] = "{:+d}".format(ATTR_DIC.get('to_hit',0))
     result_attack = ((ATTR_DIC.get('damage',0) + att) for att in EQU_DIC.get('damagerange',(0,0)))
-    stats[1] = f"{next(result_attack)} → {next(result_attack)}  ({EQU_DIC.get('damage',0)}  {ATTR_DIC.get('damage',0):+d})"
-    stats[2] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_dam',0)}"
-    stats[3] = f"{ATTR_DIC.get('element',0)}  {ATTR_DIC.get('elem_res',0)}"
-    stats[4] = f"{EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0):+d}"
+    stats[1] = "{} → {}  ({}  {:+d})".format(*result_attack, EQU_DIC.get('damage',0), ATTR_DIC.get('damage',0))
+    stats[2] = "{}  {}".format(ATTR_DIC.get('element',0), ATTR_DIC.get('elem_dam',0))
+    stats[3] = "{}  {}".format(ATTR_DIC.get('element',0), ATTR_DIC.get('elem_res',0))
+    stats[4] = "{:+d}".format(EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0))
     stats[5] = ATTR_DIC.get('attribute', None)
 
     if attr == 'power': #Edge case
