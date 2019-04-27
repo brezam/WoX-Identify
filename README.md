@@ -17,7 +17,7 @@ Run `world_of_xeen_equipmentcompare.py`and be ~even more pissed off~ mildy happy
 TO DO List:
 - [X] Use tkinter like a moron.
 - [X] Use already available information because of lazyness ♥[Gamefaq's](https://bit.ly/2Iajrox)
-- [ ] Check if the GUI displays accurate results. (6.03% done)
+- [ ] Check if the GUI displays accurate results. (14.23% done)
 
 #### There's a .exe version for those on Windows 10 x64 who can't install Python. May or may not work. Check [/dist](https://github.com/BruE0/WoX-Identify/tree/master/dist/world_of_xeen_equipmentcompare)
 
