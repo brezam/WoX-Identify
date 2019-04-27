@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # world_of_xeen_dictionary_maker.py
 # 2019.04
-# v0.9.4
+# v0.9.5
 
 import re
 from pathlib import Path

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # world_of_xeen_equipmentcompare.py
 # 2019.04
-# v0.9.4
+# v0.9.5
 
 from tkinter import *
 from tkinter import messagebox
@@ -128,7 +128,7 @@ expected_pkl_size = 8750
 bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier  v0.9.4")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier  v0.9.5")
 
 menu = Menu(master=root)
 root.config(menu=menu)
