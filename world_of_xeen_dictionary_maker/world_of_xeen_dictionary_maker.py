@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # world_of_xeen_dictionary_maker.py
-# 2019.04
-# v0.9.5
+# 2019.08
+# v0.9.6
 
 import re
 from pathlib import Path
-import pickle
+import json
 
 bigequip = {}
 bigattrib = {}
@@ -31,7 +31,7 @@ def read_txt_files():
         input()
         raise SystemExit()
 
-    ################################################## BUILDING EQUIPMENT DICTIONARY
+################################################## BUILDING EQUIPMENT DICTIONARY
 
     if exists[0]:
         with open('wox_weapons.txt', 'r') as f:
@@ -57,7 +57,7 @@ def read_txt_files():
             weapon, ac, *_ = re.split(r'\s{2,}', line)
             bigequip.setdefault(weapon.lower(),{})['ac'] = int(ac)
 
-    ################################################## BUILDING ATTRIBUTE DICTIONARY
+################################################## BUILDING ATTRIBUTE DICTIONARY
     if exists[2]:
         with open('wox_elements.txt', 'r') as f:
             data = f.read().splitlines()[1:]
@@ -104,9 +104,9 @@ def read_txt_files():
 
 ########################################################
 
-def build_pickle_file(bigattrib, bigequip):
-    with open("dictionary.pkl", "wb") as handle:
-        pickle.dump((bigattrib, bigequip), handle, protocol=3)
+def build_json_file(bigattrib, bigequip):
+    with open("dictionary.json", "w") as fp:
+        json.dump((bigattrib, bigequip), fp, indent=4)
     return
 
 
@@ -127,7 +127,7 @@ def update_stats(attr,name):
     stats[4] = "{:+d}".format(EQU_DIC.get('ac',0) + ATTR_DIC.get('ac',0))
     stats[5] = ATTR_DIC.get('attribute', None)
 
-    if attr == 'power': #Edge case
+    if attr == 'power': #Edge case: there are two attributes with the same name: power
         for x in [2,3,5]: stats[x] = stats[x]+' (maybe)' 
 
     if not name:
@@ -141,8 +141,8 @@ def update_stats(attr,name):
 
 def main():
     bigattrib, bigequip = read_txt_files()
-    build_pickle_file(bigattrib, bigequip)
-    print("[to hit, damage, elem_dam, elem_res, ac, attribute]")
-    print(update_stats("fiery","long sword")[0])
+    build_json_file(bigattrib, bigequip)
+    #print("[to hit, damage, elem_dam, elem_res, ac, attribute]")
+    #print(update_stats("fiery","long sword")[0])
 
 if __name__ == "__main__": main()

@@ -1,0 +1,879 @@
+[
+    {
+        "burning": {
+            "element": "Fire",
+            "elem_res": "+5",
+            "elem_dam": "+2",
+            "ac": 0
+        },
+        "fiery": {
+            "element": "Fire",
+            "elem_res": "+7",
+            "elem_dam": "+3",
+            "ac": 0
+        },
+        "pyric": {
+            "element": "Fire",
+            "elem_res": "+9",
+            "elem_dam": "+4",
+            "ac": 0
+        },
+        "fuming": {
+            "element": "Fire",
+            "elem_res": "+12",
+            "elem_dam": "+5",
+            "ac": 0
+        },
+        "flaming": {
+            "element": "Fire",
+            "elem_res": "+15",
+            "elem_dam": "+10",
+            "ac": 0
+        },
+        "seething": {
+            "element": "Fire",
+            "elem_res": "+20",
+            "elem_dam": "+15",
+            "ac": 0
+        },
+        "blazing": {
+            "element": "Fire",
+            "elem_res": "+25",
+            "elem_dam": "+20",
+            "ac": 0
+        },
+        "scorching": {
+            "element": "Fire",
+            "elem_res": "+30",
+            "elem_dam": "+30",
+            "ac": 0
+        },
+        "icy": {
+            "element": "Frost",
+            "elem_res": "+5",
+            "elem_dam": "+2",
+            "ac": 0
+        },
+        "frost": {
+            "element": "Frost",
+            "elem_res": "+10",
+            "elem_dam": "+4",
+            "ac": 0
+        },
+        "freezing": {
+            "element": "Frost",
+            "elem_res": "+15",
+            "elem_dam": "+5",
+            "ac": 0
+        },
+        "cold": {
+            "element": "Frost",
+            "elem_res": "+20",
+            "elem_dam": "+10",
+            "ac": 0
+        },
+        "cryo": {
+            "element": "Frost",
+            "elem_res": "+25",
+            "elem_dam": "+20",
+            "ac": 0
+        },
+        "flickering": {
+            "element": "Electrical",
+            "elem_res": "+5",
+            "elem_dam": "+2",
+            "ac": 0
+        },
+        "sparking": {
+            "element": "Electrical",
+            "elem_res": "+7",
+            "elem_dam": "+3",
+            "ac": 0
+        },
+        "static": {
+            "element": "Electrical",
+            "elem_res": "+9",
+            "elem_dam": "+4",
+            "ac": 0
+        },
+        "flashing": {
+            "element": "Electrical",
+            "elem_res": "+12",
+            "elem_dam": "+5",
+            "ac": 0
+        },
+        "shocking": {
+            "element": "Electrical",
+            "elem_res": "+15",
+            "elem_dam": "+10",
+            "ac": 0
+        },
+        "electric": {
+            "element": "Electrical",
+            "elem_res": "+20",
+            "elem_dam": "+15",
+            "ac": 0
+        },
+        "dyna": {
+            "element": "Electrical",
+            "elem_res": "+25",
+            "elem_dam": "+20",
+            "ac": 0
+        },
+        "acidic": {
+            "element": "Poison",
+            "elem_res": "+10",
+            "elem_dam": "+2",
+            "ac": 0
+        },
+        "venemous": {
+            "element": "Poison",
+            "elem_res": "+15",
+            "elem_dam": "+4",
+            "ac": 0
+        },
+        "poisonous": {
+            "element": "Poison",
+            "elem_res": "+20",
+            "elem_dam": "+8",
+            "ac": 0
+        },
+        "toxic": {
+            "element": "Poison",
+            "elem_res": "+25",
+            "elem_dam": "+16",
+            "ac": 0
+        },
+        "noxious": {
+            "element": "Poison",
+            "elem_res": "+40",
+            "elem_dam": "+32",
+            "ac": 0
+        },
+        "glowing": {
+            "element": "Energy",
+            "elem_res": "+5",
+            "elem_dam": "+2",
+            "ac": 0
+        },
+        "incandescent": {
+            "element": "Energy",
+            "elem_res": "+7",
+            "elem_dam": "+3",
+            "ac": 0
+        },
+        "dense": {
+            "element": "Energy",
+            "elem_res": "+9",
+            "elem_dam": "+4",
+            "ac": 0
+        },
+        "sonic": {
+            "element": "Energy",
+            "elem_res": "+11",
+            "elem_dam": "+5",
+            "ac": 0
+        },
+        "power": {
+            "element": "Energy",
+            "elem_res": "+13",
+            "elem_dam": "+10",
+            "ac": 0,
+            "attribute": "Might  +30"
+        },
+        "thermal": {
+            "element": "Energy",
+            "elem_res": "+15",
+            "elem_dam": "+15",
+            "ac": 0
+        },
+        "radiating": {
+            "element": "Energy",
+            "elem_res": "+20",
+            "elem_dam": "+20",
+            "ac": 0
+        },
+        "kinetic": {
+            "element": "Energy",
+            "elem_res": "+25",
+            "elem_dam": "+30",
+            "ac": 0
+        },
+        "mystic": {
+            "element": "Magic",
+            "elem_res": "+5",
+            "elem_dam": "+5",
+            "ac": 0
+        },
+        "magical": {
+            "element": "Magic",
+            "elem_res": "+10",
+            "elem_dam": "+10",
+            "ac": 0
+        },
+        "ectoplasmic": {
+            "element": "Magic",
+            "elem_res": "+20",
+            "elem_dam": "+20",
+            "ac": 0
+        },
+        "wooden": {
+            "to_hit": -3,
+            "damage": -3,
+            "ac": -3
+        },
+        "leather": {
+            "to_hit": -4,
+            "damage": -6,
+            "ac": 0
+        },
+        "brass": {
+            "to_hit": 3,
+            "damage": -4,
+            "ac": -2
+        },
+        "bronze": {
+            "to_hit": 2,
+            "damage": -2,
+            "ac": -1
+        },
+        "iron": {
+            "to_hit": 1,
+            "damage": 2,
+            "ac": 1
+        },
+        "silver": {
+            "to_hit": 2,
+            "damage": 4,
+            "ac": 2
+        },
+        "steel": {
+            "to_hit": 3,
+            "damage": 6,
+            "ac": 4
+        },
+        "gold": {
+            "to_hit": 4,
+            "damage": 8,
+            "ac": 6
+        },
+        "platinum": {
+            "to_hit": 6,
+            "damage": 10,
+            "ac": 8
+        },
+        "glass": {
+            "to_hit": 0,
+            "damage": 0,
+            "ac": 0
+        },
+        "coral": {
+            "to_hit": 1,
+            "damage": 1,
+            "ac": 1
+        },
+        "crystal": {
+            "to_hit": 1,
+            "damage": 1,
+            "ac": 1
+        },
+        "lapis": {
+            "to_hit": 2,
+            "damage": 2,
+            "ac": 2
+        },
+        "pearl": {
+            "to_hit": 2,
+            "damage": 2,
+            "ac": 2
+        },
+        "amber": {
+            "to_hit": 3,
+            "damage": 3,
+            "ac": 3
+        },
+        "ebony": {
+            "to_hit": 4,
+            "damage": 4,
+            "ac": 4
+        },
+        "quartz": {
+            "to_hit": 5,
+            "damage": 5,
+            "ac": 5
+        },
+        "ruby": {
+            "to_hit": 6,
+            "damage": 12,
+            "ac": 10
+        },
+        "emerald": {
+            "to_hit": 7,
+            "damage": 15,
+            "ac": 12
+        },
+        "sapphire": {
+            "to_hit": 8,
+            "damage": 20,
+            "ac": 14
+        },
+        "diamond": {
+            "to_hit": 9,
+            "damage": 30,
+            "ac": 16
+        },
+        "obsidian": {
+            "to_hit": 10,
+            "damage": 50,
+            "ac": 20
+        },
+        "clever": {
+            "attribute": "Intellect  +2"
+        },
+        "mind": {
+            "attribute": "Intellect  +3"
+        },
+        "sage": {
+            "attribute": "Intellect  +5"
+        },
+        "thought": {
+            "attribute": "Intellect  +8"
+        },
+        "knowledge": {
+            "attribute": "Intellect  +12"
+        },
+        "intellect": {
+            "attribute": "Intellect  +17"
+        },
+        "wisdom": {
+            "attribute": "Intellect  +23"
+        },
+        "genius": {
+            "attribute": "Intellect  +30"
+        },
+        "buddy": {
+            "attribute": "Personality  +2"
+        },
+        "friendship": {
+            "attribute": "Personality  +3"
+        },
+        "charm": {
+            "attribute": "Personality  +5"
+        },
+        "personality": {
+            "attribute": "Personality  +8"
+        },
+        "charisma": {
+            "attribute": "Personality  +12"
+        },
+        "leadership": {
+            "attribute": "Personality  +17"
+        },
+        "ego": {
+            "attribute": "Personality  +23"
+        },
+        "holy": {
+            "attribute": "Personality  +30"
+        },
+        "quick": {
+            "attribute": "Speed  +2"
+        },
+        "swift": {
+            "attribute": "Speed  +3"
+        },
+        "fast": {
+            "attribute": "Speed  +5"
+        },
+        "rapid": {
+            "attribute": "Speed  +8"
+        },
+        "speed": {
+            "attribute": "Speed  +12"
+        },
+        "wind": {
+            "attribute": "Speed  +17"
+        },
+        "accelerator": {
+            "attribute": "Speed  +23"
+        },
+        "velocity": {
+            "attribute": "Speed  +30"
+        },
+        "might": {
+            "attribute": "Might  +2"
+        },
+        "strength": {
+            "attribute": "Might  +3"
+        },
+        "warrior": {
+            "attribute": "Might  +5"
+        },
+        "ogre": {
+            "attribute": "Might  +8"
+        },
+        "giant": {
+            "attribute": "Might  +12"
+        },
+        "thunder": {
+            "attribute": "Might  +17"
+        },
+        "force": {
+            "attribute": "Might  +23"
+        },
+        "dragon": {
+            "attribute": "Might  +38"
+        },
+        "photon": {
+            "attribute": "Might  +47"
+        },
+        "sharp": {
+            "attribute": "Accuracy  +3"
+        },
+        "accurate": {
+            "attribute": "Accuracy  +5"
+        },
+        "marksman": {
+            "attribute": "Accuracy  +10"
+        },
+        "precision": {
+            "attribute": "Accuracy  +15"
+        },
+        "true": {
+            "attribute": "Accuracy  +20"
+        },
+        "exacto": {
+            "attribute": "Accuracy  +30"
+        },
+        "clover": {
+            "attribute": "Luck  +5"
+        },
+        "chance": {
+            "attribute": "Luck  +10"
+        },
+        "winners": {
+            "attribute": "Luck  +15"
+        },
+        "lucky": {
+            "attribute": "Luck  +20"
+        },
+        "gamblers": {
+            "attribute": "Luck  +25"
+        },
+        "leprechauns": {
+            "attribute": "Luck  +30"
+        },
+        "vigor": {
+            "attribute": "Hit Points  +4"
+        },
+        "health": {
+            "attribute": "Hit Points  +6"
+        },
+        "life": {
+            "attribute": "Hit Points  +10"
+        },
+        "troll": {
+            "attribute": "Hit Points  +20"
+        },
+        "vampiric": {
+            "attribute": "Hit Points  +50"
+        },
+        "spell": {
+            "attribute": "Spell Points  +4"
+        },
+        "castors": {
+            "attribute": "Spell Points  +8"
+        },
+        "witch": {
+            "attribute": "Spell Points  +12"
+        },
+        "mage": {
+            "attribute": "Spell Points  +16"
+        },
+        "archmage": {
+            "attribute": "Spell Points  +20"
+        },
+        "arcane": {
+            "attribute": "Spell Points  +25"
+        },
+        "protection": {
+            "attribute": "Armor Class  +2"
+        },
+        "armored": {
+            "attribute": "Armor Class  +4"
+        },
+        "defender": {
+            "attribute": "Armor Class  +6"
+        },
+        "stealth": {
+            "attribute": "Armor Class  +10"
+        },
+        "divine": {
+            "attribute": "Armor Class  +16"
+        },
+        "mugger": {
+            "attribute": "Thievery  +4"
+        },
+        "burgler": {
+            "attribute": "Thievery  +6"
+        },
+        "looter": {
+            "attribute": "Thievery  +8"
+        },
+        "brigand": {
+            "attribute": "Thievery  +10"
+        },
+        "filch": {
+            "attribute": "Thievery  +12"
+        },
+        "thief": {
+            "attribute": "Thievery  +14"
+        },
+        "rogue": {
+            "attribute": "Thievery  +16"
+        },
+        "plunder": {
+            "attribute": "Thievery  +18"
+        },
+        "criminal": {
+            "attribute": "Thievery  +20"
+        },
+        "pirate": {
+            "attribute": "Thievery  +25"
+        }
+    },
+    {
+        "broad sword": {
+            "damage": "3d4",
+            "damagerange": [
+                3,
+                12
+            ],
+            "type": "weapon"
+        },
+        "club": {
+            "damage": "1d3",
+            "damagerange": [
+                1,
+                3
+            ],
+            "type": "weapon"
+        },
+        "cudgel": {
+            "damage": "1d6",
+            "damagerange": [
+                1,
+                6
+            ],
+            "type": "weapon"
+        },
+        "cutlass": {
+            "damage": "2d4",
+            "damagerange": [
+                2,
+                8
+            ],
+            "type": "weapon"
+        },
+        "dagger": {
+            "damage": "2d2",
+            "damagerange": [
+                2,
+                4
+            ],
+            "type": "weapon"
+        },
+        "flail": {
+            "damage": "1d10",
+            "damagerange": [
+                1,
+                10
+            ],
+            "type": "weapon"
+        },
+        "hand axe": {
+            "damage": "2d3",
+            "damagerange": [
+                2,
+                6
+            ],
+            "type": "weapon"
+        },
+        "katana": {
+            "damage": "4d3",
+            "damagerange": [
+                4,
+                12
+            ],
+            "type": "weapon"
+        },
+        "long sword": {
+            "damage": "3d3",
+            "damagerange": [
+                3,
+                9
+            ],
+            "type": "weapon"
+        },
+        "mace": {
+            "damage": "2d4",
+            "damagerange": [
+                2,
+                8
+            ],
+            "type": "weapon"
+        },
+        "maul": {
+            "damage": "1d8",
+            "damagerange": [
+                1,
+                8
+            ],
+            "type": "weapon"
+        },
+        "nunchakas": {
+            "damage": "2d3",
+            "damagerange": [
+                2,
+                6
+            ],
+            "type": "weapon"
+        },
+        "sabre": {
+            "damage": "4d2",
+            "damagerange": [
+                4,
+                8
+            ],
+            "type": "weapon"
+        },
+        "scimitar": {
+            "damage": "2d5",
+            "damagerange": [
+                2,
+                10
+            ],
+            "type": "weapon"
+        },
+        "short sword": {
+            "damage": "2d3",
+            "damagerange": [
+                2,
+                6
+            ],
+            "type": "weapon"
+        },
+        "spear": {
+            "damage": "1d9",
+            "damagerange": [
+                1,
+                9
+            ],
+            "type": "weapon"
+        },
+        "wakazashi": {
+            "damage": "3d3",
+            "damagerange": [
+                3,
+                9
+            ],
+            "type": "weapon"
+        },
+        "bardiche": {
+            "damage": "4d4",
+            "damagerange": [
+                4,
+                16
+            ],
+            "type": "weapon"
+        },
+        "battle axe": {
+            "damage": "3d5",
+            "damagerange": [
+                3,
+                15
+            ],
+            "type": "weapon"
+        },
+        "flamberge": {
+            "damage": "4d5",
+            "damagerange": [
+                4,
+                20
+            ],
+            "type": "weapon"
+        },
+        "glaive": {
+            "damage": "4d3",
+            "damagerange": [
+                4,
+                12
+            ],
+            "type": "weapon"
+        },
+        "grand axe": {
+            "damage": "3d6",
+            "damagerange": [
+                3,
+                18
+            ],
+            "type": "weapon"
+        },
+        "great axe": {
+            "damage": "3d7",
+            "damagerange": [
+                3,
+                21
+            ],
+            "type": "weapon"
+        },
+        "halberd": {
+            "damage": "3d6",
+            "damagerange": [
+                3,
+                18
+            ],
+            "type": "weapon"
+        },
+        "hammer": {
+            "damage": "2d5",
+            "damagerange": [
+                2,
+                10
+            ],
+            "type": "weapon"
+        },
+        "naginata": {
+            "damage": "5d3",
+            "damagerange": [
+                5,
+                15
+            ],
+            "type": "weapon"
+        },
+        "pike": {
+            "damage": "2d8",
+            "damagerange": [
+                2,
+                16
+            ],
+            "type": "weapon"
+        },
+        "staff": {
+            "damage": "2d4",
+            "damagerange": [
+                2,
+                8
+            ],
+            "type": "weapon"
+        },
+        "trident": {
+            "damage": "2d6",
+            "damagerange": [
+                2,
+                12
+            ],
+            "type": "weapon"
+        },
+        "crossbow": {
+            "damage": "4d2",
+            "damagerange": [
+                4,
+                8
+            ],
+            "type": "weapon"
+        },
+        "long bow": {
+            "damage": "5d2",
+            "damagerange": [
+                5,
+                10
+            ],
+            "type": "weapon"
+        },
+        "short bow": {
+            "damage": "3d2",
+            "damagerange": [
+                3,
+                6
+            ],
+            "type": "weapon"
+        },
+        "sling": {
+            "damage": "2d2",
+            "damagerange": [
+                2,
+                4
+            ],
+            "type": "weapon"
+        },
+        "robes": {
+            "ac": 2
+        },
+        "scale armor": {
+            "ac": 4
+        },
+        "ring mail": {
+            "ac": 5
+        },
+        "chain mail": {
+            "ac": 6
+        },
+        "splint mail": {
+            "ac": 7
+        },
+        "plate mail": {
+            "ac": 8
+        },
+        "plate armor": {
+            "ac": 10
+        },
+        "shield": {
+            "ac": 4
+        },
+        "cape": {
+            "ac": 1
+        },
+        "cloak": {
+            "ac": 1
+        },
+        "belt": {
+            "ac": 0
+        },
+        "boots": {
+            "ac": 1
+        },
+        "gauntlets": {
+            "ac": 1
+        },
+        "helm": {
+            "ac": 2
+        },
+        "amulet": {
+            "ac": 0
+        },
+        "necklace": {
+            "ac": 0
+        },
+        "pendant": {
+            "ac": 0
+        },
+        "broach": {
+            "ac": 0
+        },
+        "cameo": {
+            "ac": 0
+        },
+        "charm": {
+            "ac": 0
+        },
+        "medal": {
+            "ac": 0
+        },
+        "scarab": {
+            "ac": 0
+        },
+        "ring": {
+            "ac": 0
+        }
+    }
+]

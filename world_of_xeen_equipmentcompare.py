@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # world_of_xeen_equipmentcompare.py
-# 2019.04
-# v0.9.5
+# 2019.08
+# v0.9.6
 
 from tkinter import *
 from tkinter import messagebox
-import pickle
+import json
 from pathlib import Path
 
 def hlep():
@@ -98,23 +98,23 @@ def updatevariables():
     update_label('R')
     return None
 
-def load_dictionary_file(expected_pkl_size):
-    file = Path() / 'dictionary.pkl'
+def load_dictionary_file(expected_json_size):
+    file = Path() / 'dictionary.json'
     if not file.exists():
-        file = Path() / 'world_of_xeen_dictionary_maker' / 'dictionary.pkl'
+        file = Path() / 'world_of_xeen_dictionary_maker' / 'dictionary.json'
         if not file.exists():
-            print("Dictionary file (dictionary.pkl) not found.\n")
+            print("Dictionary file (dictionary.json) not found.\n")
             input("Press Enter to exit.")
             raise SystemExit()
 
-    with open(file, "rb") as handle:
-        bigattrib, bigequip = pickle.load(handle)
+    with open(file, "r") as fp:
+        bigattrib, bigequip = json.load(fp)
     
     size = file.stat().st_size
     ignoretxt = Path() / 'ignore.txt'
 
-    if size != expected_pkl_size and not ignoretxt.exists():
-        print("Maybe you have the wrong dictionary.pkl file. Use it anyway?")
+    if size != expected_json_size and not ignoretxt.exists():
+        print("Maybe you have the wrong dictionary.json file. Use it anyway?")
         answer = input("[Y]es, [N]o, [I]gnore this warning for all time.\n>").lower()
         if answer[:1] == 'n':
             raise SystemExit()
@@ -122,13 +122,13 @@ def load_dictionary_file(expected_pkl_size):
             with open("ignore.txt", "w") as f:
                 pass
 
-    return bigattrib, bigequip, size
+    return bigattrib, bigequip
 
-expected_pkl_size = 8750
-bigattrib, bigequip, pkl_file_size = load_dictionary_file(expected_pkl_size)
+expected_json_size = 20415
+bigattrib, bigequip= load_dictionary_file(expected_json_size)
 
 root = Tk()
-root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier  v0.9.5")
+root.title("Might & Magic 4-5: World of Xeen -- Equipment Identifier  v0.9.6")
 
 menu = Menu(master=root)
 root.config(menu=menu)
@@ -202,12 +202,9 @@ bottom_text = ("• Make sure to mispell just like the game does:\n"
                "• Ignore Special Weapon powers such as \n"
                "Bug Zapper, Beast Bopper...\n"
                "(Check Important info on what they mean)\n\n"
-               "• Use correct .pkl file otherwise information is not reliable.")
-Label(master=root, text=bottom_text, justify='left').grid(row=5, column=0, columnspan=6, pady=(30,0))
+               "• Use correct .json file otherwise information is not reliable.")
+Label(master=root, text=bottom_text, justify='left').grid(row=5, column=0, columnspan=6, pady=(30,30))
 
-loaded_pkl = (".pkl size found: {} bytes\n".format(pkl_file_size)+
-              ".pkl size expected: {} bytes".format(expected_pkl_size))
-Label(master=root, text=loaded_pkl, justify='right').grid(row=6, column=2, columnspan=3, pady=(0,30))
 
 try:
     img = PhotoImage(file="game.gif")
