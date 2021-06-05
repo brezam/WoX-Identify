@@ -1,0 +1,254 @@
+[
+  {
+    "name": "burning",
+    "element": "Fire",
+    "elem_res": "+5",
+    "elem_dam": "+2",
+    "ac": 0
+  },
+  {
+    "name": "fiery",
+    "element": "Fire",
+    "elem_res": "+7",
+    "elem_dam": "+3",
+    "ac": 0
+  },
+  {
+    "name": "pyric",
+    "element": "Fire",
+    "elem_res": "+9",
+    "elem_dam": "+4",
+    "ac": 0
+  },
+  {
+    "name": "fuming",
+    "element": "Fire",
+    "elem_res": "+12",
+    "elem_dam": "+5",
+    "ac": 0
+  },
+  {
+    "name": "flaming",
+    "element": "Fire",
+    "elem_res": "+15",
+    "elem_dam": "+10",
+    "ac": 0
+  },
+  {
+    "name": "seething",
+    "element": "Fire",
+    "elem_res": "+20",
+    "elem_dam": "+15",
+    "ac": 0
+  },
+  {
+    "name": "blazing",
+    "element": "Fire",
+    "elem_res": "+25",
+    "elem_dam": "+20",
+    "ac": 0
+  },
+  {
+    "name": "scorching",
+    "element": "Fire",
+    "elem_res": "+30",
+    "elem_dam": "+30",
+    "ac": 0
+  },
+  {
+    "name": "icy",
+    "element": "Frost",
+    "elem_res": "+5",
+    "elem_dam": "+2",
+    "ac": 0
+  },
+  {
+    "name": "frost",
+    "element": "Frost",
+    "elem_res": "+10",
+    "elem_dam": "+4",
+    "ac": 0
+  },
+  {
+    "name": "freezing",
+    "element": "Frost",
+    "elem_res": "+15",
+    "elem_dam": "+5",
+    "ac": 0
+  },
+  {
+    "name": "cold",
+    "element": "Frost",
+    "elem_res": "+20",
+    "elem_dam": "+10",
+    "ac": 0
+  },
+  {
+    "name": "cryo",
+    "element": "Frost",
+    "elem_res": "+25",
+    "elem_dam": "+20",
+    "ac": 0
+  },
+  {
+    "name": "flickering",
+    "element": "Electrical",
+    "elem_res": "+5",
+    "elem_dam": "+2",
+    "ac": 0
+  },
+  {
+    "name": "sparking",
+    "element": "Electrical",
+    "elem_res": "+7",
+    "elem_dam": "+3",
+    "ac": 0
+  },
+  {
+    "name": "static",
+    "element": "Electrical",
+    "elem_res": "+9",
+    "elem_dam": "+4",
+    "ac": 0
+  },
+  {
+    "name": "flashing",
+    "element": "Electrical",
+    "elem_res": "+12",
+    "elem_dam": "+5",
+    "ac": 0
+  },
+  {
+    "name": "shocking",
+    "element": "Electrical",
+    "elem_res": "+15",
+    "elem_dam": "+10",
+    "ac": 0
+  },
+  {
+    "name": "electric",
+    "element": "Electrical",
+    "elem_res": "+20",
+    "elem_dam": "+15",
+    "ac": 0
+  },
+  {
+    "name": "dyna",
+    "element": "Electrical",
+    "elem_res": "+25",
+    "elem_dam": "+20",
+    "ac": 0
+  },
+  {
+    "name": "acidic",
+    "element": "Poison",
+    "elem_res": "+10",
+    "elem_dam": "+2",
+    "ac": 0
+  },
+  {
+    "name": "venemous",
+    "element": "Poison",
+    "elem_res": "+15",
+    "elem_dam": "+4",
+    "ac": 0
+  },
+  {
+    "name": "venomous",
+    "element": "Poison",
+    "elem_res": "+15",
+    "elem_dam": "+4",
+    "ac": 0
+  },
+  {
+    "name": "poisonous",
+    "element": "Poison",
+    "elem_res": "+20",
+    "elem_dam": "+8",
+    "ac": 0
+  },
+  {
+    "name": "toxic",
+    "element": "Poison",
+    "elem_res": "+25",
+    "elem_dam": "+16",
+    "ac": 0
+  },
+  {
+    "name": "noxious",
+    "element": "Poison",
+    "elem_res": "+40",
+    "elem_dam": "+32",
+    "ac": 0
+  },
+  {
+    "name": "glowing",
+    "element": "Energy",
+    "elem_res": "+5",
+    "elem_dam": "+2",
+    "ac": 0
+  },
+  {
+    "name": "incandescent",
+    "element": "Energy",
+    "elem_res": "+7",
+    "elem_dam": "+3",
+    "ac": 0
+  },
+  {
+    "name": "dense",
+    "element": "Energy",
+    "elem_res": "+9",
+    "elem_dam": "+4",
+    "ac": 0
+  },
+  {
+    "name": "sonic",
+    "element": "Energy",
+    "elem_res": "+11",
+    "elem_dam": "+5",
+    "ac": 0
+  },
+  {
+    "name": "thermal",
+    "element": "Energy",
+    "elem_res": "+15",
+    "elem_dam": "+15",
+    "ac": 0
+  },
+  {
+    "name": "radiating",
+    "element": "Energy",
+    "elem_res": "+20",
+    "elem_dam": "+20",
+    "ac": 0
+  },
+  {
+    "name": "kinetic",
+    "element": "Energy",
+    "elem_res": "+25",
+    "elem_dam": "+30",
+    "ac": 0
+  },
+  {
+    "name": "mystic",
+    "element": "Magic",
+    "elem_res": "+5",
+    "elem_dam": "+5",
+    "ac": 0
+  },
+  {
+    "name": "magical",
+    "element": "Magic",
+    "elem_res": "+10",
+    "elem_dam": "+10",
+    "ac": 0
+  },
+  {
+    "name": "ectoplasmic",
+    "element": "Magic",
+    "elem_res": "+20",
+    "elem_dam": "+20",
+    "ac": 0
+  }
+]

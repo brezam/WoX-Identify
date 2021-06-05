@@ -1,0 +1,1 @@
+This creates the .json file necessary to be used in world_of_xeen_equipmentcompare.py.
