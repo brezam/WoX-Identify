@@ -1,0 +1,290 @@
+[
+  {
+    "name": "clever",
+    "bonus": "Intellect  +2"
+  },
+  {
+    "name": "mind",
+    "bonus": "Intellect  +3"
+  },
+  {
+    "name": "sage",
+    "bonus": "Intellect  +5"
+  },
+  {
+    "name": "thought",
+    "bonus": "Intellect  +8"
+  },
+  {
+    "name": "knowledge",
+    "bonus": "Intellect  +12"
+  },
+  {
+    "name": "intellect",
+    "bonus": "Intellect  +17"
+  },
+  {
+    "name": "wisdom",
+    "bonus": "Intellect  +23"
+  },
+  {
+    "name": "genius",
+    "bonus": "Intellect  +30"
+  },
+  {
+    "name": "buddy",
+    "bonus": "Personality  +2"
+  },
+  {
+    "name": "friendship",
+    "bonus": "Personality  +3"
+  },
+  {
+    "name": "charm",
+    "bonus": "Personality  +5"
+  },
+  {
+    "name": "personality",
+    "bonus": "Personality  +8"
+  },
+  {
+    "name": "charisma",
+    "bonus": "Personality  +12"
+  },
+  {
+    "name": "leadership",
+    "bonus": "Personality  +17"
+  },
+  {
+    "name": "ego",
+    "bonus": "Personality  +23"
+  },
+  {
+    "name": "holy",
+    "bonus": "Personality  +30"
+  },
+  {
+    "name": "quick",
+    "bonus": "Speed  +2"
+  },
+  {
+    "name": "swift",
+    "bonus": "Speed  +3"
+  },
+  {
+    "name": "fast",
+    "bonus": "Speed  +5"
+  },
+  {
+    "name": "rapid",
+    "bonus": "Speed  +8"
+  },
+  {
+    "name": "speed",
+    "bonus": "Speed  +12"
+  },
+  {
+    "name": "wind",
+    "bonus": "Speed  +17"
+  },
+  {
+    "name": "accelerator",
+    "bonus": "Speed  +23"
+  },
+  {
+    "name": "velocity",
+    "bonus": "Speed  +30"
+  },
+  {
+    "name": "might",
+    "bonus": "Might  +2"
+  },
+  {
+    "name": "strength",
+    "bonus": "Might  +3"
+  },
+  {
+    "name": "warrior",
+    "bonus": "Might  +5"
+  },
+  {
+    "name": "ogre",
+    "bonus": "Might  +8"
+  },
+  {
+    "name": "giant",
+    "bonus": "Might  +12"
+  },
+  {
+    "name": "thunder",
+    "bonus": "Might  +17"
+  },
+  {
+    "name": "force",
+    "bonus": "Might  +23"
+  },
+  {
+    "name": "dragon",
+    "bonus": "Might  +38"
+  },
+  {
+    "name": "photon",
+    "bonus": "Might  +47"
+  },
+  {
+    "name": "sharp",
+    "bonus": "Accuracy  +3"
+  },
+  {
+    "name": "accurate",
+    "bonus": "Accuracy  +5"
+  },
+  {
+    "name": "marksman",
+    "bonus": "Accuracy  +10"
+  },
+  {
+    "name": "precision",
+    "bonus": "Accuracy  +15"
+  },
+  {
+    "name": "true",
+    "bonus": "Accuracy  +20"
+  },
+  {
+    "name": "exacto",
+    "bonus": "Accuracy  +30"
+  },
+  {
+    "name": "clover",
+    "bonus": "Luck  +5"
+  },
+  {
+    "name": "chance",
+    "bonus": "Luck  +10"
+  },
+  {
+    "name": "winners",
+    "bonus": "Luck  +15"
+  },
+  {
+    "name": "lucky",
+    "bonus": "Luck  +20"
+  },
+  {
+    "name": "gamblers",
+    "bonus": "Luck  +25"
+  },
+  {
+    "name": "leprechauns",
+    "bonus": "Luck  +30"
+  },
+  {
+    "name": "vigor",
+    "bonus": "Hit Points  +4"
+  },
+  {
+    "name": "health",
+    "bonus": "Hit Points  +6"
+  },
+  {
+    "name": "life",
+    "bonus": "Hit Points  +10"
+  },
+  {
+    "name": "troll",
+    "bonus": "Hit Points  +20"
+  },
+  {
+    "name": "vampiric",
+    "bonus": "Hit Points  +50"
+  },
+  {
+    "name": "spell",
+    "bonus": "Spell Points  +4"
+  },
+  {
+    "name": "castors",
+    "bonus": "Spell Points  +8"
+  },
+  {
+    "name": "witch",
+    "bonus": "Spell Points  +12"
+  },
+  {
+    "name": "mage",
+    "bonus": "Spell Points  +16"
+  },
+  {
+    "name": "archmage",
+    "bonus": "Spell Points  +20"
+  },
+  {
+    "name": "arcane",
+    "bonus": "Spell Points  +25"
+  },
+  {
+    "name": "protection",
+    "bonus": "Armor Class  +2"
+  },
+  {
+    "name": "armored",
+    "bonus": "Armor Class  +4"
+  },
+  {
+    "name": "defender",
+    "bonus": "Armor Class  +6"
+  },
+  {
+    "name": "stealth",
+    "bonus": "Armor Class  +10"
+  },
+  {
+    "name": "divine",
+    "bonus": "Armor Class  +16"
+  },
+  {
+    "name": "mugger",
+    "bonus": "Thievery  +4"
+  },
+  {
+    "name": "burgler",
+    "bonus": "Thievery  +6"
+  },
+  {
+    "name": "burglar",
+    "bonus": "Thievery  +6"
+  },
+  {
+    "name": "looter",
+    "bonus": "Thievery  +8"
+  },
+  {
+    "name": "brigand",
+    "bonus": "Thievery  +10"
+  },
+  {
+    "name": "filch",
+    "bonus": "Thievery  +12"
+  },
+  {
+    "name": "thief",
+    "bonus": "Thievery  +14"
+  },
+  {
+    "name": "rogue",
+    "bonus": "Thievery  +16"
+  },
+  {
+    "name": "plunder",
+    "bonus": "Thievery  +18"
+  },
+  {
+    "name": "criminal",
+    "bonus": "Thievery  +20"
+  },
+  {
+    "name": "pirate",
+    "bonus": "Thievery  +25"
+  }
+]

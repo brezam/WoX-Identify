@@ -1,1 +1,0 @@
-This creates the .pkl file necessary for use with world_of_xeen_equipmentcompare.py.
