@@ -1,0 +1,274 @@
+[
+  {
+    "name": "broad sword",
+    "damage": "3d4",
+    "damagerange": [
+      3,
+      12
+    ]
+  },
+  {
+    "name": "club",
+    "damage": "1d3",
+    "damagerange": [
+      1,
+      3
+    ]
+  },
+  {
+    "name": "cudgel",
+    "damage": "1d6",
+    "damagerange": [
+      1,
+      6
+    ]
+  },
+  {
+    "name": "cutlass",
+    "damage": "2d4",
+    "damagerange": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "dagger",
+    "damage": "2d2",
+    "damagerange": [
+      2,
+      4
+    ]
+  },
+  {
+    "name": "flail",
+    "damage": "1d10",
+    "damagerange": [
+      1,
+      10
+    ]
+  },
+  {
+    "name": "hand axe",
+    "damage": "2d3",
+    "damagerange": [
+      2,
+      6
+    ]
+  },
+  {
+    "name": "katana",
+    "damage": "4d3",
+    "damagerange": [
+      4,
+      12
+    ]
+  },
+  {
+    "name": "long sword",
+    "damage": "3d3",
+    "damagerange": [
+      3,
+      9
+    ]
+  },
+  {
+    "name": "mace",
+    "damage": "2d4",
+    "damagerange": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "maul",
+    "damage": "1d8",
+    "damagerange": [
+      1,
+      8
+    ]
+  },
+  {
+    "name": "nunchakas",
+    "damage": "2d3",
+    "damagerange": [
+      2,
+      6
+    ]
+  },
+  {
+    "name": "sabre",
+    "damage": "4d2",
+    "damagerange": [
+      4,
+      8
+    ]
+  },
+  {
+    "name": "scimitar",
+    "damage": "2d5",
+    "damagerange": [
+      2,
+      10
+    ]
+  },
+  {
+    "name": "short sword",
+    "damage": "2d3",
+    "damagerange": [
+      2,
+      6
+    ]
+  },
+  {
+    "name": "spear",
+    "damage": "1d9",
+    "damagerange": [
+      1,
+      9
+    ]
+  },
+  {
+    "name": "wakazashi",
+    "damage": "3d3",
+    "damagerange": [
+      3,
+      9
+    ]
+  },
+  {
+    "name": "wakizashi",
+    "damage": "3d3",
+    "damagerange": [
+      3,
+      9
+    ]
+  },
+  {
+    "name": "bardiche",
+    "damage": "4d4",
+    "damagerange": [
+      4,
+      16
+    ]
+  },
+  {
+    "name": "battle axe",
+    "damage": "3d5",
+    "damagerange": [
+      3,
+      15
+    ]
+  },
+  {
+    "name": "flamberge",
+    "damage": "4d5",
+    "damagerange": [
+      4,
+      20
+    ]
+  },
+  {
+    "name": "glaive",
+    "damage": "4d3",
+    "damagerange": [
+      4,
+      12
+    ]
+  },
+  {
+    "name": "grand axe",
+    "damage": "3d6",
+    "damagerange": [
+      3,
+      18
+    ]
+  },
+  {
+    "name": "great axe",
+    "damage": "3d7",
+    "damagerange": [
+      3,
+      21
+    ]
+  },
+  {
+    "name": "halberd",
+    "damage": "3d6",
+    "damagerange": [
+      3,
+      18
+    ]
+  },
+  {
+    "name": "hammer",
+    "damage": "2d5",
+    "damagerange": [
+      2,
+      10
+    ]
+  },
+  {
+    "name": "naginata",
+    "damage": "5d3",
+    "damagerange": [
+      5,
+      15
+    ]
+  },
+  {
+    "name": "pike",
+    "damage": "2d8",
+    "damagerange": [
+      2,
+      16
+    ]
+  },
+  {
+    "name": "staff",
+    "damage": "2d4",
+    "damagerange": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "trident",
+    "damage": "2d6",
+    "damagerange": [
+      2,
+      12
+    ]
+  },
+  {
+    "name": "crossbow",
+    "damage": "4d2",
+    "damagerange": [
+      4,
+      8
+    ]
+  },
+  {
+    "name": "long bow",
+    "damage": "5d2",
+    "damagerange": [
+      5,
+      10
+    ]
+  },
+  {
+    "name": "short bow",
+    "damage": "3d2",
+    "damagerange": [
+      3,
+      6
+    ]
+  },
+  {
+    "name": "sling",
+    "damage": "2d2",
+    "damagerange": [
+      2,
+      4
+    ]
+  }
+]

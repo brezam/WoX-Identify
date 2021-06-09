@@ -1,0 +1,134 @@
+[
+  {
+    "name": "wooden",
+    "to_hit": -3,
+    "damage": -3,
+    "ac": -3
+  },
+  {
+    "name": "leather",
+    "to_hit": -4,
+    "damage": -6,
+    "ac": 0
+  },
+  {
+    "name": "brass",
+    "to_hit": 3,
+    "damage": -4,
+    "ac": -2
+  },
+  {
+    "name": "bronze",
+    "to_hit": 2,
+    "damage": -2,
+    "ac": -1
+  },
+  {
+    "name": "iron",
+    "to_hit": 1,
+    "damage": 2,
+    "ac": 1
+  },
+  {
+    "name": "silver",
+    "to_hit": 2,
+    "damage": 4,
+    "ac": 2
+  },
+  {
+    "name": "steel",
+    "to_hit": 3,
+    "damage": 6,
+    "ac": 4
+  },
+  {
+    "name": "gold",
+    "to_hit": 4,
+    "damage": 8,
+    "ac": 6
+  },
+  {
+    "name": "platinum",
+    "to_hit": 6,
+    "damage": 10,
+    "ac": 8
+  },
+  {
+    "name": "glass",
+    "to_hit": 0,
+    "damage": 0,
+    "ac": 0
+  },
+  {
+    "name": "coral",
+    "to_hit": 1,
+    "damage": 1,
+    "ac": 1
+  },
+  {
+    "name": "crystal",
+    "to_hit": 1,
+    "damage": 1,
+    "ac": 1
+  },
+  {
+    "name": "lapis",
+    "to_hit": 2,
+    "damage": 2,
+    "ac": 2
+  },
+  {
+    "name": "pearl",
+    "to_hit": 2,
+    "damage": 2,
+    "ac": 2
+  },
+  {
+    "name": "amber",
+    "to_hit": 3,
+    "damage": 3,
+    "ac": 3
+  },
+  {
+    "name": "ebony",
+    "to_hit": 4,
+    "damage": 4,
+    "ac": 4
+  },
+  {
+    "name": "quartz",
+    "to_hit": 5,
+    "damage": 5,
+    "ac": 5
+  },
+  {
+    "name": "ruby",
+    "to_hit": 6,
+    "damage": 12,
+    "ac": 10
+  },
+  {
+    "name": "emerald",
+    "to_hit": 7,
+    "damage": 15,
+    "ac": 12
+  },
+  {
+    "name": "sapphire",
+    "to_hit": 8,
+    "damage": 20,
+    "ac": 14
+  },
+  {
+    "name": "diamond",
+    "to_hit": 9,
+    "damage": 30,
+    "ac": 16
+  },
+  {
+    "name": "obsidian",
+    "to_hit": 10,
+    "damage": 50,
+    "ac": 20
+  }
+]
