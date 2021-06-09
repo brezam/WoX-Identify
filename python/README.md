@@ -21,4 +21,4 @@ Run `world_of_xeen_equipmentcompare.py`
 ### Sample
 Gotta have that 90's look. We can't be anachronistic.
 
-<img src="sample.png" height=300>
+<img src="sample2.png" height=300>
