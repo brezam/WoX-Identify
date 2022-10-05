@@ -14,7 +14,7 @@
         <maven-compiler.version>3.8.0</maven-compiler.version>
         <maven-shade.version>2.3.0</maven-shade.version>
         <javafx.version>11</javafx.version>
-        <jackson.version>2.10.5.1</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <coveo.version>2.10</coveo.version>
         <maven-shade.version>3.2.4</maven-shade.version>
     </properties>
